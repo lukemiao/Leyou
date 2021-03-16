@@ -1,0 +1,13 @@
+server:
+  port: 10086
+spring:
+  application:
+    name: lkm-eureka #将来作为微服务名称 注入到eureka容器
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka
+
+  server:
+    eviction-interval-timer-in-ms: 5000 # 剔除无效连接的间隔时间
+#    enable-self-preservation: false # 关闭自我保护状态
